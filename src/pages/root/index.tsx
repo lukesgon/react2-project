@@ -1,31 +1,36 @@
 import NavBar from '../../components/NavBar';
-import { Link, Outlet } from 'react-router-dom';
+import Menu from '../../components/Menu';
+import { Outlet } from 'react-router-dom';
+import { useMediaQuery } from '@mui/material';
+import Button from '../../components/Button';
 import Title from '../../components/Title';
+import { useState } from 'react';
 import './styles.css'
 
 
 const Root = () => {
+    const isPortrait = useMediaQuery('(orientation: portrait)');
+    const [isOpen, setIsOpen] = useState(false);
+
+    function handleClick() {
+        setIsOpen(!isOpen)
+    };
+
+    function closeMenu() {
+        setIsOpen(false)
+    };
+
     return (
         <>
             <NavBar id='nav-bar'>
                 <Title>Sk8 E-Shop</Title>
-                <ul>
-                    <li>
-                        <Link to='/' className='nav-btn'>Início</Link>
-                    </li>
-                    <li>
-                        <Link to='/signin' className='nav-btn'>Acesso</Link>
-                    </li>
-                    <li>
-                        <Link to='/account' className='nav-btn'>Conta</Link>
-                    </li>
-                    <li>
-                        <Link to='/about' className='nav-btn'>Sobre</Link>
-                    </li>
-                    <li>
-                        <Link to='/cart' className='nav-btn'>Carrinho</Link>
-                    </li>
-                </ul>
+                <section id='nav-menu'>
+                    {isOpen && <Menu onClick={closeMenu} />}
+                    {isPortrait 
+                        ? <Button onClick={handleClick}>☰</Button>
+                        : <Menu />
+                    }
+                </section>
             </NavBar>
             <Outlet />
         </>
