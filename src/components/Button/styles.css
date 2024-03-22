@@ -1,0 +1,30 @@
+#hamburger-btn, #cart-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 50%;
+    padding: 0.3rem;
+    margin: 2rem 0;
+    position: relative;
+
+    background-color: var(--frt-color);
+    color: var(--trh-color);
+    
+    font-weight: bold;
+    font-size: 1rem;
+
+    z-index: 200;
+
+}
+
+#cart-btn{
+    z-index: 50;
+}
+
+.cart-icon {
+    stroke: black;
+}

@@ -20,9 +20,6 @@ const Menu = ({onClick}:MenuProps) => {
             <li>
                 <Link to='/about' className='nav-btn'>Sobre</Link>
             </li>
-            <li>
-                <Link to='/cart' className='nav-btn'>Carrinho</Link>
-            </li>
         </ul>
     )
 };

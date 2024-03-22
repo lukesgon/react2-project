@@ -8,14 +8,19 @@
     --std-color: white;
     --sec-color: rgb(200, 200, 200);
     --trh-color: rgb(40, 40, 40);
-    --frt-color: rgb(250, 200, 30);
+    --frt-color: rgb(250, 191, 30);
 }
 
 * {
     font-family: 'Ubuntu', sans-serif;
+    color: var(--frt-color);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
 
+body {
+    background-color: var(--std-color);
+    margin-top: 3.5rem;
+}
